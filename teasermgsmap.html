@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <title>Leaflet mapcache teaser mgsmap</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.4/leaflet.css" />
+        <!--[if lte IE 8]>
+             <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.4/leaflet.ie.css" />
+        <![endif]-->
+<body>
+        <div id="map" style="width:100%; height: 350px"></div>
+        <script src="http://cdn.leafletjs.com/leaflet-0.4/leaflet.js"></script>
+        <script>
+    var tilejson = {
+        tilejson: '1.0.0',
+        tms: 'true',
+        maxZoom: 18,
+        attribution: 'Données &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Produit par <a href="http://mapgears.com">Mapgears</a>'
+         };
+                var map = L.map('map').setView([45.4751,-73.568 ], 11);
+                L.tileLayer('http://cartalib.mapgears.com/mapcache/tms/1.0.0/mgsmap_v1@g/{z}/{x}/{y}.png', tilejson).addTo(map);
+
+//     var olLayer = new OpenLayers.Layer.TileCache("grayoneTilecacheLayer",
+//                ["http://cartalib.mapgears.com/tiles/",
+//                 "http://cartalib1.mapgears.com/tiles/",
+//                 "http://cartalib2.mapgears.com/tiles/",
+//                "http://cartalib3.mapgears.com/tiles/",
+//                "http://cartalib4.mapgears.com/tiles/"],
+//                "grayone",
+//                { name: 'grayoneTilecacheLayer',
+//                    serverResolutions: [156543.03392804099712520838,78271.51696402048401068896,39135.75848201022745342925,19567.87924100512100267224,9783.93962050256050133612,4891.96981025128025066806,2445.98490512564012533403,1222.99245256282006266702,611.49622628141003133351,305.74811314070478829308,152.87405657035250783338,76.43702828517623970583,38.21851414258812695834,19.10925707129405992646,9.55462853564703173959,4.77731426782351586979,2.38865713391175793490,1.19432856695587897633,0.59716428347793950593]
+//                }
+//        };
+                L.marker([45.4751, -73.568]).addTo(map).bindPopup("<b>Hello!</b><br />Bouuu");
+                //var popup = L.popup();
+        </script>
+</body>
+</html>
