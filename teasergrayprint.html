@@ -1,0 +1,24 @@
+<html>
+<head>
+        <title>Leaflet mapcache teaser mgsmap</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.4/leaflet.css" />
+        <!--[if lte IE 8]>
+             <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.4/leaflet.ie.css" />
+        <![endif]-->
+<body>
+        <div id="map" style="width:100%; height: 350px"></div>
+        <script src="http://cdn.leafletjs.com/leaflet-0.4/leaflet.js"></script>
+        <script>
+    var tilejson = {
+        tilejson: '1.0.0',
+        tms: 'true',
+        maxZoom: 18,
+        attribution: 'Données &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Produit par <a href="http://mapgears.com">Mapgears</a>'
+         };
+                var map = L.map('map').setView([45.4751,-73.568 ], 11);
+                L.tileLayer('http://cartalib.mapgears.com/mapcache/tms/1.0.0/grayprint_v1@g/{z}/{x}/{y}.png', tilejson).addTo(map);
+        </script>
+</body>
+</html>
