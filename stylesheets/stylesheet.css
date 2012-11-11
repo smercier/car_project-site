@@ -98,13 +98,13 @@ header h4 {
 }
 
 .inner {
-  width: 620px;
+  width: 1000px;
   margin: 0 auto;
 }
 
 .teaser-leaflet {
-  width: 600px;
-  height: 350px;
+  width: 1000px;
+  height: 200px;
   margin: 0 auto;
 }
 
