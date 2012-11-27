@@ -37,15 +37,15 @@
 </div>
 
 
-<h4>Cartalib</h4>
-<p>Cartalib est une librairie de cartes réalisées par <a href="http://www.mapgears.com/">Mapgears</a> pour ses projets, spécialement conçue pour <a href="http://www.mapserver.org/">Mapserver</a>. Destinée à des utilisateurs qui ont fait le choix de <a href="http://www.mapserver.org/">Mapserver</a>. comme moteur cartographique, cette librairie permet de profiter immédiatement d'une carte optimisée pour votre besoins.   Le produit allie les données géographiques et des fichiers de configuration ("mapfiles") spécialement conçus et optimisés pour leur utilisation avec MapServer.  Cette carte tuilée, produite avec des données ouvertes <a href="http://www.openstreetmap.org/.">OpenStreetMap</a> est un exemple de ce que nous offrons.  Ce produit est basé sur les travaux de <a href="https://github.com/tbonfort ">Thomas Bonfort</a> avec l'outil <a href="https://github.com/mapserver/basemaps ">Basemap</a> pour Mapserver.  Vous pouvez télécharger le produit et l'utiliser.  Nous pouvons aussi adapter le produit à votre besoin.
-</p>
-<a href="https://github.com/solutionsmapgears/cartalib" id="view-on-github" class="button"><span>Télécharger</span></a>
-<br><br><br>
+<p>Cartalib est une librairie de cartes réalisées par <a href="http://www.mapgears.com/">Mapgears</a> pour ses projets, spécialement conçue pour <a href="http://www.mapserver.org/">Mapserver</a>. Ces cartes sont directement utilisables via des API telles <a href="http://openlayers.org/">OpenLayers</a>, <a href="http://leafletjs.com/">leaflet</a> ou <a href="http://d3js.org/">D3.js</a> ou encore <a href="http://polymaps.org/">Polymaps</a>, par exemple.  
+
+Cette librairie de carte ouverte offre une grande flexibilité et peux être librement utilisée à des fins non-commerciales. Elle peut être utilisé via un service Cartalib en ligne, en mode serveur autonome à l'aide du dépôt de fichiers directement copié sur votre serveur, ou enfin à l'aide d'un serveur dédié contenant l'installation complète de toutes les composantes technologiques.  
 
 <p>Nous avons d'autre cartes prêtes à l'utilisation construite pour les données Navteq, Natural Earth et Tiger, nous contacter pour ce genre de besoin.  Vous trouverez ici quelques indications pour vous permettre d'intégrer facilement cette carte à votre application.</p>
 
-<h4>leaflet</h4>
+<h4>Cartalib en ligne</h4>
+
+<h3>leaflet</h3>
 
 <p>Avec l'api <a href="http://leafletjs.com/">leaflet</a>, vous pourrez utiser cartalib de cette façon: </p>
 
@@ -63,21 +63,51 @@
 </code>
 </pre>
 
-<h4>openlayers</h4>
-<p>Il est aussi possible d'utiliser l'api <a href="http://openlayers.org/">OpenLayers</a> pour insérer cette carte à votre application sans aucune autre composante serveur particulière.  Simplement <a href="http://cartalib.mapgears.com/">télécharger</a> (attention 2GB) et exposer l'arborescence de répertoires de cette carte sur votre serveur.  Par la suite, utiliser un layers de type TileCachede cette façon.</p>
+<h3>openlayers</h3>
+<pre>
+<code>
+todo
+</code>
+</pre>
+
+<h3>d3.js</h3>
+<pre>
+<code>
+todo
+</code>
+</pre>
+
+<h3>jquerygeo</h3>
+<pre>
+<code>
+todo
+</code>
+</pre>
+
+
+
+
+<h4>Serveur autonome</h4>
+<p>Il est aussi possible d'utiliser l'api <a href="http://openlayers.org/">OpenLayers</a> pour insérer cette carte à votre application sans aucune autre composante serveur particulière.  Simplement <a href="http://cartalib.mapgears.com/">télécharger</a> (attention 2GB) et exposer l'arborescence de cette carte sur votre serveur. Web  Par la suite, utiliser un layers de type TileCachede cette façon.</p>
 <pre><code>
 var olLayer = new OpenLayers.Layer.TileCache("grayprint",
-                ["http://cartalib.mapgears.com/tiles/",
-                 "http://cartalib1.mapgears.com/tiles/",
-                 "http://cartalib2.mapgears.com/tiles/",
-                 "http://cartalib3.mapgears.com/tiles/",
-		"http://cartalib4.mapgears.com/tiles/"],
-                "grayprint",
+                "http://cartalib.mapgears.com/tiles/",  "grayprint",
                 { name: 'grayprint',
                     serverResolutions: [156543.03392804099712520838,78271.51696402048401068896,39135.75848201022745342925,19567.87924100512100267224,9783.93962050256050133612,4891.96981025128025066806,2445.98490512564012533403,1222.99245256282006266702,611.49622628141003133351,305.74811314070478829308,152.87405657035250783338,76.43702828517623970583,38.21851414258812695834,19.10925707129405992646,9.55462853564703173959,4.77731426782351586979,2.38865713391175793490,1.19432856695587897633,0.59716428347793950593] 
                 }
             );
 </code></pre>
+
+
+<h4>Serveur dédié</h4>
+
+Destinée à des utilisateurs qui ont fait le choix de <a href="http://www.mapserver.org/">Mapserver</a>. comme moteur cartographique, cette librairie permet de profiter immédiatement d'une carte optimisée pour votre besoins.   Le produit allie les données géographiques et des fichiers de configuration ("mapfiles") spécialement conçus et optimisés pour leur utilisation avec MapServer.  Ce type d'installation nécésite l'installation d'une base données ouvertes <a href="http://www.openstreetmap.org/.">OpenStreetMap</a> à l'aide de l'utilitaire d'importation <a href="http://imposm.org/">imposm</a>.  Vous pourrez trouver la précédure complète d'installation de toutes les composantes Open Source sur le wiki <a href=" http://trac.osgeo.org/mapserver/wiki/RenderingOsmDataUbuntu/">Rendering OSM data with MapServer</a>. 
+
+Ce produit est basé sur les travaux de <a href="https://github.com/tbonfort ">Thomas Bonfort</a> avec l'outil <a href="https://github.com/mapserver/basemaps ">Basemap</a> pour Mapserver.  Vous pouvez télécharger le produit et l'utiliser.  Nous pouvons aussi adapter le produit à votre besoin.
+</p>
+<a href="https://github.com/solutionsmapgears/cartalib" id="view-on-github" class="button"><span>Télécharger</span></a>
+<br><br><br>
+
 
 <h4>Andoid</h4>
 
