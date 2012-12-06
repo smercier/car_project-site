@@ -17,14 +17,21 @@
         maxZoom: 18,
         attribution: 'Données &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Produit par <a href="http://mapgears.com">Mapgears</a>'
          };
-                var map = L.map('map').setView([45.4751,-73.568 ], 11);
-                L.tileLayer('http://cartalib.mapgears.com/mapcache/tms/1.0.0/grayprint_v1@g/{z}/{x}/{y}.png', tilejson).addTo(map);
+               // var map = L.map('map').setView([45.4751,-73.568 ], 11);
+                var gprint = L.tileLayer('http://cartalib.mapgears.com/mapcache/tms/1.0.0/grayprint_v1@g/{z}/{x}/{y}.png', tilejson);
 
-		var trigrid = new L.TileLayer.WMS("http://qc.mapgears.com:81/cgi-bin/mapserv?map=/var/www/osm_mapping/workspace/Simon/noucal/tgrid.map", {
+		var trigrid = new L.TileLayer.WMS("http://qc.mapgears.com:81/cgi-bin/mapserv?map=/var/www/osm_mapping/workspace/Simon/noucal/tgrid.map&", {
 			layers: 'default',
 			format: 'image/png',
 			transparent: true
-		}).addTo(map);
+		});
+
+                    map = new L.Map('map', {
+			center: new L.LatLng(45.4751,-73.568 ), 
+			zoom: 7,
+			layers: [gprint, trigrid],
+			zoomControl: true
+		});
 
         </script>
 </body>
