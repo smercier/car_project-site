@@ -63,6 +63,18 @@ a:hover {
   color: #152445;
 }
 
+.titre-cartalib {
+  font-family: 'Nova Mono', cursive;
+  letter-spacing: -1px;
+  font-size: 48px;
+  color: #303030;
+  line-height: 1.2;
+}
+
+.titre-cartalib ext {
+  font-family: 'Special Elite', cursive;
+}
+
 header {
   padding-top: 35px;
   padding-bottom: 25px;
